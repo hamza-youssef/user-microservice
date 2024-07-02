@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-user-microservice
+  labels:
+    app: {{ .Release.Name }}-user-microservice
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-user-microservice
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}-user-microservice
+    spec:
+      containers:
+      - name: user-microservice
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        ports:
+        - containerPort: 9091
+

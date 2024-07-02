@@ -1,0 +1,27 @@
+replicaCount: 2
+
+image:
+  repository: hamzayyoussef/usermicroservice
+  tag: "latest"  # Default value; can be overridden
+  pullPolicy: IfNotPresent
+
+service:
+  type: LoadBalancer
+  port: 9091
+
+ingress:
+  enabled: false
+  annotations: {}
+  hosts:
+    - host: chart-example.local
+      paths: []
+  tls: []
+
+resources: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
