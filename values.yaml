@@ -2,7 +2,7 @@ replicaCount: 2
 
 image:
   repository: hamzayyoussef/usermicroservice
-  tag: "latest"  # Default value; can be overridden
+  tag: "152"  # Default value; can be overridden
   pullPolicy: IfNotPresent
 
 service:
@@ -25,3 +25,5 @@ tolerations: []
 
 affinity: {}
 
+serviceAccount:
+  create: true
